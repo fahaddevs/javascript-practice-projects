@@ -40,3 +40,13 @@ function addTaskFunc(e) {
     taskInput.value = '';
   }
 }
+
+// Remove Task
+function removeTaskFunc(e) {
+  let ele = e.target;
+  if(ele.hasAttribute('href')){
+    if(confirm('Are you sure?')) {
+      ele.parentElement.remove();
+    }
+  }
+}
