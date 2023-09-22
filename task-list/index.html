@@ -4,25 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task List JavaScript practice project</title>
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="container">
-    <h2>Add New Task</h2>
-    <form id="task_form">
-      <input type="text" name="#" id="task_input" placeholder="New Task">
-      <input type="submit" value="Add Task">
-    </form>
+<body> 
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="text-center">Add New Task</h2>
+            <form id="task_form">
+              <div class="input-group mt-4">
+                <input type="text" name="#" id="task_input" class="form-control form-control-lg" placeholder="New Task">
+                <input type="submit" class="input-group-text btn btn-lg btn-primary" value="Add Task">
+              </div>
+            </form>
 
-    <hr>
+            <hr>
 
-    <h2>Tasks List</h2>
-    <input type="text" name="#" id="task_filter" placeholder="Filter Task">
+            <div class="row mt-5 align-items-center justify-content-between">
+              <div class="col-auto">
+                <h4>Tasks List</h4>
+              </div>
+              <div class="col-auto">
+                <input type="text" name="#" id="task_filter" class="form-control" placeholder="Filter Task">
+              </div>
+            </div>
 
-    <ul id="task_list"></ul>
-
-    <button type="button" id="clear_task">Clear All Tasks</button>
+            <ul id="task_list" class="mt-4"></ul>
+            <div id="no_data_match" style="display: none;">No data match</div>
+            <div class="mt-4 text-center">
+              <button type="button" id="clear_task" class="btn btn-danger">Clear All Tasks</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="app.js"></script>
