@@ -3,3 +3,16 @@
 html {
   font-family: 'Poppins', sans-serif;
 }
+
+#task_list {
+  list-style: none;
+  padding-left: 0;
+}
+
+#task_list li {
+  font-size: 18px;
+}
+
+#task_list li + li {
+  margin-top: 10px;
+}
