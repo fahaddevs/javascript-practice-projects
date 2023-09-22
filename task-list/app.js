@@ -50,3 +50,8 @@ function removeTaskFunc(e) {
     }
   }
 }
+
+// Remove All Tasks
+function removeAllTaskFunc() {
+  taskList.innerHTML = '';
+}
