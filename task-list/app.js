@@ -11,6 +11,7 @@ let removeTask = document.querySelector('#clear_task');
 takForm.addEventListener('submit', addTaskFunc);
 taskList.addEventListener('click', removeTaskFunc);
 removeTask.addEventListener('click', removeAllTaskFunc);
+filterTask.addEventListener('keyup', filterTaskFunc);
 
 
 /*
@@ -54,4 +55,19 @@ function removeTaskFunc(e) {
 // Remove All Tasks
 function removeAllTaskFunc() {
   taskList.innerHTML = '';
+}
+
+// Filter Fcuntion
+function filterTaskFunc() {
+  let filterText = filterTask.value.toLowerCase();
+
+  document.querySelectorAll('li').forEach(task => {
+    let item = task.firstChild.textContent;
+
+    if(item.toLowerCase().indexOf(filterText)!= -1){
+      task.style.display = 'block';
+    } else {
+      task.style.display = 'none';
+    }
+  })
 }
