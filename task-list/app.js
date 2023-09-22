@@ -11,3 +11,32 @@ let removeTask = document.querySelector('#clear_task');
 takForm.addEventListener('submit', addTaskFunc);
 taskList.addEventListener('click', removeTaskFunc);
 removeTask.addEventListener('click', removeAllTaskFunc);
+
+
+/*
+===========================
+      All Functions
+===========================
+*/
+// Add task
+function addTaskFunc(e) {
+  e.preventDefault();
+
+  let taskInputValue = taskInput.value;
+
+  if(taskInputValue === '') {
+    alert('Please write something before adding a task');
+  } else {
+    let li = document.createElement('li');
+    li.appendChild(document.createTextNode(taskInputValue + ' '));
+
+    let removeBtn = document.createElement('a');
+    removeBtn.setAttribute('href', '#');
+    removeBtn.innerHTML = 'X';
+
+    li.appendChild(removeBtn);
+
+    taskList.appendChild(li);
+    taskInput.value = '';
+  }
+}
